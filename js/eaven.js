@@ -63,18 +63,32 @@ playBtnElem.addEventListener('click', function() {
     const randomNumber = getRandomNumber();
 
 
-    //*** VERIFY IF SUM IS EAVEN ***//
-    const sum = number + randomNumber;
+    //*** VERIFY VICTORY ***//
+    // Prepare message
+    let gameResultMsg = `
+    <p>Hai scelto ${choise}</p>
+    <p>Numero inserito: ${number}</p>
+    <p>Numero generato: ${randomNumber}</p>`;
 
-    console.log(sum, isEaven(sum));
+    // Get sum
+    const sum = number + randomNumber;
+    
+    // Verify victory
+    if( (isEaven(sum) && choise === 'pari') || 
+        (!isEaven(sum) && choise === 'dispari') )
+    {
+        gameResultMsg += `<p>La somma è ${sum}. Hai Vinto!!!</p>`;
+    } else {
+        gameResultMsg += `<p>La somma è ${sum}. Hai Perso.</p>`;
+    }
 
 
     //*** SHOW MESSAGE ***//
-    //palindromeResultElem.innerText = palindromeMsg;
+    eavenResultElem.innerHTML = gameResultMsg;
 
     // ! Log Message
-    //console.log(palindromeMsg);
-    //console.log(' ');
+    console.log(gameResultMsg);
+    console.log(' ');
 
 });
 
