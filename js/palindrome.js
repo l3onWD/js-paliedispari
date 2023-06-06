@@ -23,6 +23,25 @@ console.log('');
 
 
 /* -----------------------------------------
+* FUNCTIONS
+-------------------------------------------*/
+function isPalindrome(word) {
+
+    let reverseWord = '';
+
+    // Create reversed word
+    for(let i = word.length - 1; i >= 0; i--) {
+        reverseWord += word.charAt(i);
+    }
+
+    if(word === reverseWord) return true;
+
+    return false;
+}
+
+
+
+/* -----------------------------------------
 * LOGIC
 -------------------------------------------*/
 console.log('----------- LOGIC -----------');
@@ -36,6 +55,8 @@ verifyElem.addEventListener('click', function() {
 
     //*** VERIFY PALINDROME ***//
     let palindromeMsg = `La parola ${word} non è palindroma.`;
+
+    if(isPalindrome(word)) palindromeMsg = `La parola ${word} è palindroma.`;
 
 
     //*** SHOW MESSAGE ***//
