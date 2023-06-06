@@ -15,7 +15,7 @@ console.log('----------- INIT -----------');
 //*** DOM ELEMENTS ***//
 const eavenChoiseElem = document.getElementById('eaven-choise');
 const eavenNumberElem = document.getElementById('eaven-number');
-constplayBtnElem = document.getElementById('play-btn');
+const playBtnElem = document.getElementById('play-btn');
 const eavenResultElem = document.getElementById('eaven-result');
 
 
@@ -23,10 +23,18 @@ const eavenResultElem = document.getElementById('eaven-result');
 console.log('### Elementi DOM:');
 console.log('Select:' , eavenChoiseElem);
 console.log('Number Input:' , eavenNumberElem);
-console.log('Button:' , eavenBtnElem);
+console.log('Button:' , playBtnElem);
 console.log('Message Container:' , eavenResultElem);
 console.log('');
 
+
+/* -----------------------------------------
+* FUNCTIONS
+-------------------------------------------*/
+function getRandomNumber(min = 1, max = 5) {
+    const number = Math.floor(Math.random() * (max + 1 - min)) + min;
+    return number;
+}
 
 
 /* -----------------------------------------
@@ -35,29 +43,28 @@ console.log('');
 console.log('----------- LOGIC -----------');
 
 //*** CLICK PLAY BUTTON ***//
-verifyElem.addEventListener('click', function() {
+playBtnElem.addEventListener('click', function() {
 
     //*** GET USER INPUT ***//
-    const word = wordElem.value.trim();
+    const choise = eavenChoiseElem.value;
+    const number = parseInt(eavenNumberElem.value);
 
 
     //*** VALIDATION ***//
-    const isValid = word.length !== 0;
+    //const isValid = word.length !== 0;
 
 
-    //*** VERIFY PALINDROME ***//
-    let palindromeMsg = `La parola ${word} non è palindroma.`;
-
-    if(!isValid) palindromeMsg = `Errore: non hai inserito la parola da verificare!`
-    else if(isPalindrome(word.toLowerCase())) palindromeMsg = `La parola ${word} è palindroma.`;
+    //*** GET RANDOM NUMBER ***//
+    const randomNumber = getRandomNumber();
+    console.log(randomNumber);
 
 
     //*** SHOW MESSAGE ***//
-    palindromeResultElem.innerText = palindromeMsg;
+    //palindromeResultElem.innerText = palindromeMsg;
 
     // ! Log Message
-    console.log(palindromeMsg);
-    console.log(' ');
+    //console.log(palindromeMsg);
+    //console.log(' ');
 
 });
 
