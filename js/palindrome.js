@@ -10,7 +10,15 @@ console.log('----------- INIT -----------');
 
 
 //*** DOM ELEMENTS ***//
+const wordElem = document.getElementById('palindrome-word');
+const verifyElem = document.getElementById('palindrome-btn');
 
+
+// ! Log DOM Elements
+console.log('### Elementi DOM:');
+console.log('Word Input:' , wordElem);
+console.log('Verify Button:' , verifyElem);
+console.log('');
 
 
 /* -----------------------------------------
