@@ -34,7 +34,7 @@
     - _"Genero un numero random da 1 a 5"_
     - Sommo i numeri
     - _"Verifico se un numero è pari"_
-    **SE** _"Il numero è pari"_
+    **SE** _"Il numero è pari"_ **E** _"la scelta è pari"_ **OPPURE** _"Il numero è dispari"_ **E** _"la scelta è dispari"_
         - Aggiorno il messaggio con la vittoria
     - Mostro il risultato
     - **FINE**
