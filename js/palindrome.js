@@ -54,10 +54,15 @@ verifyElem.addEventListener('click', function() {
     const word = wordElem.value.trim();
 
 
+    //*** VALIDATION ***//
+    const isValid = word.length !== 0;
+
+
     //*** VERIFY PALINDROME ***//
     let palindromeMsg = `La parola ${word} non è palindroma.`;
 
-    if(isPalindrome(word.toLowerCase())) palindromeMsg = `La parola ${word} è palindroma.`;
+    if(!isValid) palindromeMsg = `Errore: non hai inserito la parola da verificare!`
+    else if(isPalindrome(word.toLowerCase())) palindromeMsg = `La parola ${word} è palindroma.`;
 
 
     //*** SHOW MESSAGE ***//
