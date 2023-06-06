@@ -37,6 +37,11 @@ function getRandomNumber(min = 1, max = 5) {
 }
 
 
+function isEaven(number) {
+    return number % 2 === 0;
+}
+
+
 /* -----------------------------------------
 * LOGIC
 -------------------------------------------*/
@@ -56,7 +61,12 @@ playBtnElem.addEventListener('click', function() {
 
     //*** GET RANDOM NUMBER ***//
     const randomNumber = getRandomNumber();
-    console.log(randomNumber);
+
+
+    //*** VERIFY IF SUM IS EAVEN ***//
+    const sum = number + randomNumber;
+
+    console.log(sum, isEaven(sum));
 
 
     //*** SHOW MESSAGE ***//
