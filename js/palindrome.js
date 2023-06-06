@@ -1,13 +1,6 @@
-/*
-Palidroma
-    - Chiedere all’utente di inserire una parola
-    - Creare una funzione per capire se la parola inserita è palindroma
-*/
 /* -----------------------------------------
 * INIT
 -------------------------------------------*/
-console.log('----------- INIT -----------');
-
 
 //*** DOM ELEMENTS ***//
 const wordElem = document.getElementById('palindrome-word');
@@ -41,11 +34,9 @@ function isPalindrome(word) {
 }
 
 
-
 /* -----------------------------------------
 * LOGIC
 -------------------------------------------*/
-console.log('----------- LOGIC -----------');
 
 //*** CLICK VERIFY BUTTON ***//
 verifyElem.addEventListener('click', function() {
@@ -73,6 +64,3 @@ verifyElem.addEventListener('click', function() {
     console.log(' ');
 
 });
-
-
-console.log('----------- DONE -----------');

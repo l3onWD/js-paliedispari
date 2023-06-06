@@ -9,19 +9,57 @@ Pari e Dispari
 /* -----------------------------------------
 * INIT
 -------------------------------------------*/
-//console.log('----------- INIT -----------');
+console.log('----------- INIT -----------');
 
 
 //*** DOM ELEMENTS ***//
+const eavenChoiseElem = document.getElementById('eaven-choise');
+const eavenNumberElem = document.getElementById('eaven-number');
+constplayBtnElem = document.getElementById('play-btn');
+const eavenResultElem = document.getElementById('eaven-result');
+
+
+// ! Log DOM Elements
+console.log('### Elementi DOM:');
+console.log('Select:' , eavenChoiseElem);
+console.log('Number Input:' , eavenNumberElem);
+console.log('Button:' , eavenBtnElem);
+console.log('Message Container:' , eavenResultElem);
+console.log('');
 
 
 
 /* -----------------------------------------
 * LOGIC
 -------------------------------------------*/
-//console.log('----------- LOGIC -----------');
+console.log('----------- LOGIC -----------');
+
+//*** CLICK PLAY BUTTON ***//
+verifyElem.addEventListener('click', function() {
+
+    //*** GET USER INPUT ***//
+    const word = wordElem.value.trim();
 
 
+    //*** VALIDATION ***//
+    const isValid = word.length !== 0;
 
 
-//console.log('----------- DONE -----------');
+    //*** VERIFY PALINDROME ***//
+    let palindromeMsg = `La parola ${word} non è palindroma.`;
+
+    if(!isValid) palindromeMsg = `Errore: non hai inserito la parola da verificare!`
+    else if(isPalindrome(word.toLowerCase())) palindromeMsg = `La parola ${word} è palindroma.`;
+
+
+    //*** SHOW MESSAGE ***//
+    palindromeResultElem.innerText = palindromeMsg;
+
+    // ! Log Message
+    console.log(palindromeMsg);
+    console.log(' ');
+
+});
+
+
+console.log('----------- DONE -----------');
