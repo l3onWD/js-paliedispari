@@ -54,40 +54,46 @@ playBtnElem.addEventListener('click', function() {
     const choise = eavenChoiseElem.value;
     const number = parseInt(eavenNumberElem.value);
 
-
-    //*** VALIDATION ***//
-    //const isValid = word.length !== 0;
-
-
-    //*** GET RANDOM NUMBER ***//
-    const randomNumber = getRandomNumber();
-
-
-    //*** VERIFY VICTORY ***//
-    // Prepare message
-    let gameResultMsg = `
-    <p>Hai scelto ${choise}</p>
-    <p>Numero inserito: ${number}</p>
-    <p>Numero generato: ${randomNumber}</p>`;
-
-    // Get sum
-    const sum = number + randomNumber;
     
-    // Verify victory
-    if( (isEaven(sum) && choise === 'pari') || 
-        (!isEaven(sum) && choise === 'dispari') )
-    {
-        gameResultMsg += `<p>La somma è ${sum}. Hai Vinto!!!</p>`;
-    } else {
-        gameResultMsg += `<p>La somma è ${sum}. Hai Perso.</p>`;
+    //*** VALIDATION ***//
+    let isValid = true;
+    let gameMsg = '';
+    
+    if(isNaN(number) || number < 1 || number > 5) isValid = false;
+    
+    if(!isValid) gameMsg = 'Errore: il numero deve essere compreso tra 1 e 5!';
+    else {
+
+        //*** GET RANDOM NUMBER ***//
+        const randomNumber = getRandomNumber();
+
+
+        //*** VERIFY VICTORY ***//
+        // Prepare message
+        gameMsg = `
+        <p>Hai scelto ${choise}</p>
+        <p>Numero inserito: ${number}</p>
+        <p>Numero generato: ${randomNumber}</p>`;
+
+        // Get sum
+        const sum = number + randomNumber;
+        
+        // Verify victory
+        if( (isEaven(sum) && choise === 'pari') || 
+            (!isEaven(sum) && choise === 'dispari') )
+        {
+            gameMsg += `<p>La somma è ${sum}. Hai Vinto!!!</p>`;
+        } else {
+            gameMsg += `<p>La somma è ${sum}. Hai Perso.</p>`;
+        }
     }
 
 
     //*** SHOW MESSAGE ***//
-    eavenResultElem.innerHTML = gameResultMsg;
+    eavenResultElem.innerHTML = gameMsg;
 
     // ! Log Message
-    console.log(gameResultMsg);
+    console.log(gameMsg);
     console.log(' ');
 
 });
