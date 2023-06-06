@@ -34,6 +34,7 @@ function isPalindrome(word) {
         reverseWord += word.charAt(i);
     }
 
+    // Check if is palindrome
     if(word === reverseWord) return true;
 
     return false;
@@ -56,7 +57,7 @@ verifyElem.addEventListener('click', function() {
     //*** VERIFY PALINDROME ***//
     let palindromeMsg = `La parola ${word} non è palindroma.`;
 
-    if(isPalindrome(word)) palindromeMsg = `La parola ${word} è palindroma.`;
+    if(isPalindrome(word.toLowerCase())) palindromeMsg = `La parola ${word} è palindroma.`;
 
 
     //*** SHOW MESSAGE ***//
