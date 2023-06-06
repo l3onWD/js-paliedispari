@@ -4,7 +4,7 @@
 
 //*** DOM ELEMENTS ***//
 const wordElem = document.getElementById('palindrome-word');
-const verifyElem = document.getElementById('palindrome-btn');
+const verifyElem = document.getElementById('verify-btn');
 const palindromeResultElem = document.getElementById('palindrome-result');
 
 
