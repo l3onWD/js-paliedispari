@@ -1,16 +1,6 @@
-/*
-Pari e Dispari
-    - L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-    - Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-    - Sommiamo i due numeri
-    - Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-    - Dichiariamo chi ha vinto.
-*/
 /* -----------------------------------------
 * INIT
 -------------------------------------------*/
-console.log('----------- INIT -----------');
-
 
 //*** DOM ELEMENTS ***//
 const eavenChoiseElem = document.getElementById('eaven-choise');
@@ -20,7 +10,7 @@ const eavenResultElem = document.getElementById('eaven-result');
 
 
 // ! Log DOM Elements
-console.log('### Elementi DOM:');
+console.log('### Elementi DOM "Eaven/Odd":');
 console.log('Select:' , eavenChoiseElem);
 console.log('Number Input:' , eavenNumberElem);
 console.log('Button:' , playBtnElem);
@@ -31,12 +21,21 @@ console.log('');
 /* -----------------------------------------
 * FUNCTIONS
 -------------------------------------------*/
+/**
+ * Generate a random number from min to max params (included).
+ * @param {Number} min minimum number
+ * @param {Number} max maximum number
+ * @returns {Number}
+ */
 function getRandomNumber(min = 1, max = 5) {
-    const number = Math.floor(Math.random() * (max + 1 - min)) + min;
-    return number;
+    return Math.floor(Math.random() * (max + 1 - min)) + min;
 }
 
-
+/**
+ * Check if a number is eaven.
+ * @param {Number} number the number to check
+ * @returns {Boolean}
+ */
 function isEaven(number) {
     return number % 2 === 0;
 }
@@ -45,7 +44,6 @@ function isEaven(number) {
 /* -----------------------------------------
 * LOGIC
 -------------------------------------------*/
-console.log('----------- LOGIC -----------');
 
 //*** CLICK PLAY BUTTON ***//
 playBtnElem.addEventListener('click', function() {
@@ -97,6 +95,3 @@ playBtnElem.addEventListener('click', function() {
     console.log(' ');
 
 });
-
-
-console.log('----------- DONE -----------');

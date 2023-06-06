@@ -9,7 +9,7 @@ const palindromeResultElem = document.getElementById('palindrome-result');
 
 
 // ! Log DOM Elements
-console.log('### Elementi DOM:');
+console.log('### Elementi DOM "Palindroma":');
 console.log('Word Input:' , wordElem);
 console.log('Verify Button:' , verifyElem);
 console.log('');
@@ -18,6 +18,11 @@ console.log('');
 /* -----------------------------------------
 * FUNCTIONS
 -------------------------------------------*/
+/**
+ * Check if a word is palindrome.
+ * @param {String} word 
+ * @returns {Boolean}
+ */
 function isPalindrome(word) {
 
     let reverseWord = '';
